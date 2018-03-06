@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+<span>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                    <h1>Add Day Name</h1>
+                    </div>
+
+               </div>
+
+              <form th:action="@{/mydayname}" th:object="${newdayname}" method="post">
+                        <input type="hidden" th:field="*{id}">
+
+                  <span th:if="${#fields.hasErrors('title')}" th:errors="*{dayname}"></span>
+            <label for="dayname">Day Name</label>
+            <input type="text" class="form-control" th:field="*{dayname}">
+
+            <label for="female">Female</label>
+            <span th:if="${#fields.hasErrors('female')}" th:errors="*{female}"></span>
+            <input type="text" class="form-control" th:field="*{female}">
+
+            <label for="desc">Male</label>
+            <span th:if="${#fields.hasErrors('male')}" th:errors="*{male}"></span>
+            <input type="text" class="form-control" th:field="*{male}">
+
+                  <button type="submit" class="btn btn-default">Save</button>
+
+                </form>
+            </div>
+
+        </section>
+    </span>
+
+</body>
+</html>
