@@ -2,7 +2,7 @@ package com.rekik.mydayname;
 
 public class Test {
 
-    public class test(){
+    //public class test(){
 
-    }
+    //}
 }

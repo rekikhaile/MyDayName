@@ -10,33 +10,29 @@
 <body>
 
 <div class="container">
+    <form th:action="@{/mydayname}" method="post">
+        <div class="col-md-12 h3 text-center">
+            <div>
+                <label for="getdob">Enter your date of birth</label>
+            </div>
+            <input type="radio" name="gender" th:value="male"/>Male
+            <input type="radio" name="gender" th:value="female"/>Female
 
-    <div class="col-md-12 h3 text-center">
-        <div>
-            <label th:inline="text">Day names for [[${entereddate}]]</label>
-        </div>
-        <div>
-            <div  th:if="${malename}!=''" th:inline="text">Male name:[[${malename}]]</div>
-            <div  th:if="${femalename}!=''" th:inline="text">Female name:[[${femalename}]]</div>
-        </div>
-
-        <div>
-            <div th:switch="${gender}">
-                <p th:case="'male'">Male was selected</p>
-                <p th:case="'female'">Female was selected</p>
+            <div>
+                <input type="text" placeholder="dd/mm/yyyy" id="getdob" name="getdob">
             </div>
         </div>
-        <!-- See how this acts like a loop?-->
-        <div><a class="btn btn-default" th:href="@{/mydayname}" >Enter another date</a></div>
+    </form>
 
 
-    </div>
     <div class="row">
         <div class="col-md-6 "></div>
         <div class="col-md-6"></div>
     </div>
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 </div>
 </body>
 </html>
